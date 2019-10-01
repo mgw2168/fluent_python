@@ -27,3 +27,5 @@ deck = FrenchDeck()
 print(deck)
 
 print(deck[:3])
+
+print(deck[::-1])
