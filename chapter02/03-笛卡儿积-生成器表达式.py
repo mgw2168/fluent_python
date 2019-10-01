@@ -14,3 +14,4 @@ sizes = ['S', 'M', 'L']
 for tshirts in ('%s %s' % (color, size) for color in colors for size in sizes):
     print(tshirts)
 
+divmod()
