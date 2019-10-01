@@ -19,13 +19,22 @@ class FrenchDeck:
 
 
 beer_card = Card('7', 'diamonds')
-print(beer_card.suit)
-print(beer_card.rank)
 print(beer_card)
 
 deck = FrenchDeck()
-print(deck)
 
-print(deck[:3])
+# 如果一个集合类型没有实现__contains__方法，那么in运算符就会按顺序做一次迭代搜索
+# FrenchDeck是可迭代的
+print(Card('Q', "hearts") in deck)
 
-print(deck[::-1])
+suit_values = dict(spades=3, hearts=2, diamonds=1, clubs=0)
+
+def spades_high(card):
+    rank_value = FrenchDeck.ranks.index(card.rank)
+    
+    return rank_value*len(suit_values) + suit_values[card.suit]
+
+for card in sorted(deck, key=spades_high):
+    print(card)
+
+print(spades_high(card))
