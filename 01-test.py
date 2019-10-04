@@ -6,8 +6,9 @@ print(suits)
 
 
 str = 'magongwei'
+num = 12442545345
 
-print('{:>1}'.format(str))
+print('{:>} | {:^20} | {:^10}'.format(str, num, str))
 
 # {:,}千位分割符
 print('{:,}'.format(121439000000))
